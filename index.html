@@ -1,0 +1,149 @@
+<html>
+  <!-- See also: http://kempe.net/blog/2014/06/14/leaflet-pan-zoom-image.html -->
+  <head>
+	  
+
+	  
+   <link rel="stylesheet" href="meadow.css">
+    <link rel="stylesheet" href="modal.css">
+	<link rel="stylesheet" href="scale.css">
+	<link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="css/app.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+	
+ 	<script type="text/javascript" src="math.min.js"></script>
+	
+	    <script src="js/app.js"></script>
+		
+		<script language="javascript" type="text/javascript">
+			
+			 
+			window.addEventListener('load', function() {
+					//alert('Loading window...');
+					if (typeof web3 !== 'undefined') {
+
+					    // Use Mist/MetaMask's provider
+					    window.web3 = new Web3(web3.currentProvider); 
+						//web3.eth.getAccounts(accounts => alert(accounts[0]));
+					   if (web3.currentProvider.isMetaMask !== true) {
+						   alert("Kein Metamask!");
+					       //setInterval(altrefreshUnicorn,5000);
+								
+							}
+							else {
+								
+							}
+					}
+
+			})	
+			
+			setTimeout(refreshUnicorn, 100);
+			setInterval(refreshUnicorn, 3000);
+			setInterval(refreshPrice, 5000);
+			setInterval(refreshMessage, 5000);
+		setInterval(refreshUser, 5000);
+	    
+		
+		setInterval(clearAddlog,5000);
+	
+		</script>
+
+  
+  
+  </head>
+  <body>
+	<!-- Backgroundgraphics-->
+    <div id="l1" class="one"></div>
+    <div id="l2" class="two"></div>
+   
+     <!-- Inputdialogs -->
+	<div class="form_feedunicorn" id="blockchain">
+		 <div class="feedunicorn_content" id="feedunicorn">
+			 <div id="feed_container">
+				 <p id="newfont">Feed the Unicorn!</p>
+				 UNC:<input id="feedunc" type="unc" class="text form-controller" value="5" maxlength="7" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+		  		 Name:<input id="feedname" type="from" class="text form-controller" value="Your Name" maxlength="20">
+		  		 Message:<input id="feedmsg" type="data" class="text form-controller" value="Your Message" maxlength="35">
+		   	  	<button id="feedunicornbtn" class="feed button">Feed the Unicorn!</button>
+	   		</div>
+		   <div id="feedinfo" style="display: none">The Unicorn only shouts your Message after receiving Unicoins - get them here:<br><button id="getUnicoins_2" class="button">Get Unicoins</button></div>
+		   <div id="feedinfo_2" style="display: none">Please Log In your Metamask Account</div>
+         </div>
+		   
+         </div>
+	</div>
+    
+	<div class="form_buywithmeta" id="blockchain2">
+		
+     	<div class="buywithmeta_content" id="buyUNC">
+	      	
+ 	        <div id="blockchain"><span class="PRICE"><img id="loading_msg" src="loading.gif" width="90" height="60"></span></br>
+        	  <!-- 	Your MetaMask Account: <span class="valueM"></span> -->
+				<span class="value"></span>
+				  <!-- 	Network: <span class="valueN"></span> -->
+	      	</div>
+ 			<input id="buyUNCinput" type="amount" class="text form-controller" value="1" maxlength="7" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+ 			<button id="buyUNCbtn" class="buyunc button">Buy with Metamask</button>
+      	</div>
+    </div>
+	
+  <!-- Overlay -->
+	
+	<div class="wrapper">
+		 
+	   
+          <div id="header" class="block2"> 
+	  	     <div id="header">UniCoin Alpha 2</div>
+          </div>
+  			<div id="middle">
+  			<div id="msg_container">
+     		   	<div id="info_msg"></div>
+    			<div id="explain_msg" style="display: none">This Message Box is being updated directly from the Ethereum Blockchain - You can write your own Message to the world by clicking on Feed the Unicorn!</div>
+     		   	<img src="speech_bubble.png" class="overlay_sb" alt="Message">
+     		   	<p id="text"  >
+       			 	<span class="currentMessage" ><img id="loading_msg" src="loading.gif" width="90" height="60"></span>
+     		   	</p>
+  		  	</div>
+	 	  <div id="from_container">
+  		     <div id="info_unc"></div>
+  		     <div id="explain_unc" style="display: none">The Name and Size of the Unicorn is being updated directly from the Ethereum Blockchain. Everytime you feed the Unicorn (see button below) the Unicorn gets bigger - try it!</div>
+		     <img src="unicorn.gif" class="overlay" alt="Unicorn">
+  			 <p id="name">
+       		   <span class="currentName"><img id="loading_unc" src="loading.gif" width="90" height="60"></span>
+     		 </p>
+   	 	  </div>
+		  
+	  	  <div class="block"> 
+		      <img src="ruler.png" class="ruler" alt="Ruler" >
+		      <figure class="measure">1 cm</figure>
+	      </div>
+	   	  </div>
+ 	       
+
+			
+		  <div id="newfont" class="block3"> 
+	 	      <div id="unc_container">
+	 	         <img src="unicoin.png" class="overlay_coin" alt="UncBalance">
+	 	         <p id="uncbalance">
+	 	            <span class="currentBalance" ><img id="loadingsmall" src="loading.gif" width="30" height="20"></span>
+	 	         </p>
+	 	      </div>
+			  <div id="button_container">
+			  <button id="getUnicoins" class="button">Get Unicoins</button>
+		      <button id="getFeedDialog" class="button">Feed the Unicorn!</button>		  
+ 			  <button id="getExchange" onclick="location.href='exchange.html'" class="button" >Trade Unicoins</button>
+		  	  </div>
+ 		  </div>
+	
+	  
+	  	 
+     </div>
+  
+  </body>
+  
+  <script type="text/javascript" src="scale.js"></script>
+  <script type="text/javascript" src="modal.js"></script>
+</html>
+
+

@@ -1,0 +1,150 @@
+<html>
+
+  <head>
+   <link rel="stylesheet" href="meadow_exc.css">
+    <link rel="stylesheet" href="modal_exc.css">
+    <link rel="stylesheet" href="css/app.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+ 	<script type="text/javascript" src="math.min.js"></script>
+	
+	    <script src="js/app.js"></script>
+		
+		<script>
+			
+			
+		setTimeout(refreshSellOrderList, 3000);
+		setTimeout(refreshBuyOrderList, 3000);
+		setInterval(refreshUnicorn, 3000);
+		setInterval(refreshUser, 1000);
+		setInterval(refreshSellOrderList,5000);
+		//setInterval(displaySellOrderList,5000);
+		setInterval(refreshBuyOrderList,5000);
+		setInterval(setBackendCandleStick,5000);
+		//setInterval(displayBuyOrderList,5000);
+		setInterval(refreshPrice, 5000);
+		
+		setInterval(refreshMessage, 5000);
+		//setInterval(clearAddlog,9000);
+		//setInterval(clearList,9000);
+		setInterval(setBackendStatus,10000);
+		
+		//ADMIN REFRESH
+		setInterval(refreshMultiSig, 5000);
+		setInterval(refreshFee, 5000);
+		setInterval(refreshSupply, 5000);
+		</script>
+
+  </head>
+  <body>
+   <div class="form_buywithmeta" id="blockchain2">
+		
+    	<div class="buywithmeta_content" id="buyUNC">
+		<input type="amount" class="text form-control" value="1">
+		<button id="buyUNCbtn" class="buyunc btn btn-primary">Buy with Metamask</button>
+		</div>
+	 
+   </div>
+	<div class="form_sellorder" id="blockchain6">
+		 <div class="feedunicorn_content" id="feedunicorn">
+			 UNC:<input type="unc" class="text form-control" value="5" maxlength="7" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+		  ETH:<input type="eth" class="text form-control" value="5" maxlength="7">
+		   <button id="placeSellOrderbtn" class="placeSellOrder btn btn-primary">Place Sell Order</button>
+	     </div>
+    </div>	
+	<div class="form_buyorder" id="blockchain4">
+		 <div class="feedunicorn_content" id="feedunicorn">
+			 UNC:<input type="unc" class="text form-control" value="5" maxlength="7" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+		  ETH:<input type="eth" class="text form-control" value="5" maxlength="7">
+		   <button id="placeBuyOrderbtn" class="placeBuyOrder btn btn-primary">Place Buy Order</button>
+	     </div>
+    </div>
+	<div class="wrapper">
+		<h1>UniCoin Admin Alpha 0.1</h1>
+   			<div id="newfont" class="block3"> 
+
+  		  <div class="form-group" id="blockchain">
+  	      	<div>
+  			<input type="checkbox" id="check" onclick="showToggleTrades()"> Toggle between Your Trades/other Trades</input>
+  	        <br>Your MetaMask Account: <span class="valueM"></span>
+  			<br>Balance:<span class="value"></span>
+  			<br>Network: <span class="valueN"></span>
+  			<br>YOUR UniCoins <span class="userBalanceUNC"></span>
+  	        <br>Current Message: <p id="text" style="display:inline"><span class="currentMessage"></span></p>
+  			<br>Current Name:<p id="name" style="display:inline"><span class="currentName"></span></p>
+  			<br>Unicoinsize: <span class="UniCoinSize"></span> New:
+			<input type="uncsizeinput" class="text form-control" maxlength="7" value="5" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+  			<br>Price: <span class="Price"></span>
+			New:
+						<input type="priceinput" class="text form-control" maxlength="10" value="0.002">
+ 			<br>Supply: <span class="Supply"></span>
+			New:
+						<input type="supplyinput" class="text form-control" maxlength="7" value="5" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+ 			<br>Fee: <span class="Fee"></span>
+			<input type="feeinput" class="text form-control" maxlength="3" value="1" onkeypress='return event.charCode >= 48 && 					event.charCode <= 57'>
+  		   </div>
+ 	     	<button id="getUnicoins" class="btn btn-primary">Get Unicoins</button>
+ 			<button id="getHome"  onclick="location.href='index.html'" class="btn btn-primary">Back</button>
+			<button id="setUncSizebtn" class="setUncSize btn btn-primary">Set UniCoinSize</button>
+			<button id="setPricebtn" class="setPrice btn btn-primary">Set Price</button>
+			<button id="setSupplybtn" class="setSupply btn btn-primary">Set Supply</button>
+			<button id="setFeebtn" class="setFee btn btn-primary">Set Fee</button>
+  	      </div>
+ 		  
+	      
+		  
+		 	
+ 
+         </div>
+		 
+  	<div id="newfont" class="block3"> 
+ 		  <div class="form-group" id="mSig">
+ 	      	<div>
+ 			
+ 	        <br>Multi Sig Wallet <span class="mSigAccount"></span>
+ 			<br>Balance:<span class="mSigBalance"></span>
+ 			
+	        </div>
+	  
+          </div>
+ 	</div>		
+	 	
+		   	<div class="clmn" id="header" >
+		  		<div style="text-align: center; margin-bottom: 0px;">Seller UniCoins List <button id="getSellDialog" class="btn btn-primary">Place Sell Order</button></div>
+				
+			 </div> 
+ 		   	<div class="clmn" id="header" >
+ 		  		<div style="text-align: center; margin-bottom: 0px;">Buyer UniCoins List <button id="getBuyDialog" class="btn btn-primary">Place Buy Order</button></div>
+ 			 </div>
+		   	<div class="column" id="sellOrderList" >
+		  		
+		  		<div class="divTable" id="sellOrderList">
+				
+		  		<div id="sellOrderList" class="list divTableBody" >
+		   	    </div>
+		      </div>
+		        </div>
+		 	
+			  
+		   	<div class="column" id="buyOrderList">
+		  		
+		  		<div class="divTable" id="buyOrderList">
+					
+		  		<div id="buyOrderList" class="list divTableBody" >
+		   	    </div>
+		      </div>
+		        </div>
+		 
+ 	   <div id="newfont" class="block3" style="overflow: hidden;"> 
+ 		   <iframe src="http://saveunicoins.com/chart.html" style="align: center; overflow-x: hidden; overflow-y: hidden;" width=100% height="380" frameBorder="0">
+	    
+ 	   </iframe></div>	
+   		
+  </div>
+  </body>
+  
+  
+  <script type="text/javascript" src="modal_exc.js"></script>
+</html>
+
+

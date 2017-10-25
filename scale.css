@@ -1,0 +1,68 @@
+
+	/* Global Styling */
+	/*html, body {margin:0px; padding: 0px;overflow: hidden}*/
+
+	
+
+
+
+
+	.right {float: right !important;}
+	/* Image zoom on hover + Overlay colour */
+	.one {
+		z-index: 2;
+		 margin: 0 0 0 auto;
+		height: 100%;
+	    width: 100%;
+		position: absolute;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	
+		transform: scale(3);
+		opacity: 1;
+		background-attachment: fixed;
+		background-position: center;
+		background-image:  radial-gradient(
+      rgba(0, 0, 0, 0.01), 
+      rgba(0, 0, 0, 0.0)
+    ),url(j_0.png);
+	}
+
+	.two {
+	 
+	 	 z-index: 1;
+	      
+		margin: 0 0 0 auto;
+		height: 100%;
+	    width: 100%;
+		position: absolute;
+		position: center;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	  
+		transform: scale(3);
+		opacity: 1;
+		background-attachment: fixed;
+		background-position: center;
+		
+		background-image:  radial-gradient(
+      rgba(0, 0, 0, 0.01), 
+      rgba(0, 0, 0, 0.0)
+    ),url(j_1.png);
+	}
+
+
+/*	.one:after, .two:after {
+		content: "";
+		    display: block;
+			/*background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.02)  100%);
+				 border-radius: 150%;
+		    position: absolute;
+		    top: -150; left: -150; right: -150; bottom: -150;
+	}
+	*/
+
+
+
+
+	.hello {display: none}

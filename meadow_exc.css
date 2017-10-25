@@ -1,0 +1,107 @@
+
+	/* Global Styling */
+	html, body {margin:0px; padding: 0px;
+  	  height: 100%;
+	  overflow-x: hidden;
+   	  overflow-y: scroll;
+  	  background-color: #555555;
+	}
+	#newfont {
+	  
+	  color: #000;
+      text-align: left;
+      float: left;
+	  font-family: "lato", sans-serif;
+	  font-weight: 30;
+	  font-size: 13px;
+	  letter-spacing: 2px;
+
+	}
+	
+	.column{
+	    text-align: left;
+	    float: left;
+	  
+		 width: 40%;
+		 height: 19%;
+		 margin-top: 0px;
+		 margin-left: 4%;
+		 overflow-y: scroll;
+		 overflow-x: hidden;
+	border: 1px solid #999999;
+	}
+	.clmn{
+	    text-align: left;
+	    float: left;
+	  
+		 width: 40%;
+
+		 margin-top: 25px;
+		 margin-left: 4%;
+		  
+	
+	}
+	.block3{
+	    
+		column-span: all;
+		    width: 85%;
+	     margin-left: 4%;
+		 margin-right: 4%;  
+   	 border: 1px solid #999999;
+	}
+	.list {
+		 text-align: left;
+		 margin: 0 0 0 0px;
+
+	  font-size: 13px;
+	  color: black;
+	  font-weight: bold;
+	
+
+	}
+	.listitem{
+		margin-top: -15px;
+		
+	}
+	.wrapper {
+	  
+	    text-align: center;
+	    margin-left: auto;
+	    margin-right: auto;
+		z-index: 992;
+	       
+	}
+
+	.right {float: right !important;}
+	/* Image zoom on hover + Overlay colour */
+	.divTable{
+		display: table;
+		width: 100%;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	.divTableRow {
+		display: table-row;
+	}
+	.divTableHeading {
+		background-color: #EEE;
+		display: table-header-group;
+	}
+	.divTableCell, .divTableHead {
+		border: 1px solid #999999;
+		display: table-cell;
+		padding: 3px 10px;
+	}
+	.divTableHeading {
+		background-color: #EEE;
+		display: table-header-group;
+		font-weight: bold;
+	}
+	.divTableFoot {
+		background-color: #EEE;
+		display: table-footer-group;
+		font-weight: bold;
+	}
+	.divTableBody {
+		display: table-row-group;
+	}

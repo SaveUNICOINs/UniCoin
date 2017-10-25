@@ -1,0 +1,23 @@
+{
+  "contract_name": "owned",
+  "code": "60606040523415600b57fe5b5b60008054600160a060020a03191633600160a060020a03161790555b5b60338060366000396000f30060606040525bfe00a165627a7a72305820839cd2d055c63944cd908166f27226e03754a71d7ebf6b3924c07f8681ad0c2c0029",
+  "runtime_bytecode": "60606040525bfe00a165627a7a72305820839cd2d055c63944cd908166f27226e03754a71d7ebf6b3924c07f8681ad0c2c0029",
+  "real_runtime_bytecode": "60606040525bfe00a165627a7a72305820839cd2d055c63944cd908166f27226e03754a71d7ebf6b3924c07f8681ad0c2c0029",
+  "swarm_hash": "839cd2d055c63944cd908166f27226e03754a71d7ebf6b3924c07f8681ad0c2c",
+  "gas_estimates": {
+    "creation": [
+      20431,
+      10200
+    ],
+    "external": {},
+    "internal": {}
+  },
+  "function_hashes": {},
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ]
+}
